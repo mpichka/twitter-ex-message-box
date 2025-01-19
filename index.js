@@ -45,7 +45,7 @@ function removeMessageBox() {
 }
 
 function removeGrokButton() {
-  document.querySelector('[data-testid="GrokDrawerHeader"]')?.remove();
+  document.querySelector('[data-testid="GrokDrawerHeader"]')?.parentElement.remove();
 }
 
 function removeGrokFromMenu() {
