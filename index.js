@@ -25,7 +25,7 @@ const REMOVE_GROK_UTILITIES = true;
 
 (function () {
   'use strict';
-  const TIMEOUT = 500; // оновлення екрану через кожні 0.5 секунди
+  const TIMEOUT = 100; // оновлення екрану в мілісекундах. 1000мс = 1 секунда
 
   const loadingTimer = setInterval(() => {
     if (REMOVE_MESSAGE_BOX) removeMessageBox();
@@ -45,7 +45,9 @@ function removeMessageBox() {
 }
 
 function removeGrokButton() {
-  document.querySelector('[data-testid="GrokDrawerHeader"]')?.parentElement.remove();
+  document
+    .querySelector('[data-testid="GrokDrawerHeader"]')
+    ?.parentElement.remove();
 }
 
 function removeGrokFromMenu() {
@@ -54,6 +56,11 @@ function removeGrokFromMenu() {
 
 function removeBlueCheckAd() {
   document.querySelector('a[href="/i/premium_sign_up"]')?.remove();
+  document
+    .querySelector(
+      'aside[role="complementary"][class="css-175oi2r r-1habvwh r-eqz5dr r-uaa2di r-1mmae3n r-3pj75a r-bnwqim"]',
+    )
+    ?.parentElement.remove();
 }
 
 function removeVacanciesFromMenu() {
